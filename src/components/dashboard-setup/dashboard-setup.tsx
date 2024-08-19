@@ -202,11 +202,14 @@ const DashboardSetupInner: React.FC<DashboardSetupProps> = ({
                             )}
                         </div>
                         <div className="self-end">
-                            <Button
-                                disabled={isLoading}
-                                type="submit"
-                            >
-                                {!isLoading ? 'Create Workspace' : <Loader />}
+                            <Button disabled={isLoading} type="submit">
+                                {isLoading ? (
+                                    <div className="flex justify-center">
+                                        <Loader />
+                                    </div>
+                                ) : (
+                                    'Create Workspace'
+                                )}
                             </Button>
                         </div>
                     </div>

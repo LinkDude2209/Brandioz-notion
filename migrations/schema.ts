@@ -89,7 +89,6 @@ export const prices = pgTable("prices", {
     metadata: jsonb("metadata"),
 });
 
-
 export const subscriptions = pgTable("subscriptions", {
     id: text("id").primaryKey().notNull(),
     userId: uuid("user_id").notNull(),
@@ -106,4 +105,21 @@ export const subscriptions = pgTable("subscriptions", {
     canceledAt: timestamp("canceled_at", { withTimezone: true, mode: 'string' }).default(sql`now()`),
     trialStart: timestamp("trial_start", { withTimezone: true, mode: 'string' }).default(sql`now()`),
     trialEnd: timestamp("trial_end", { withTimezone: true, mode: 'string' }).default(sql`now()`),
+});
+
+
+export const collaborators = pgTable('collaborators', {
+    id: uuid('id').defaultRandom().primaryKey().notNull(),
+    workspaceId: uuid('workspace_id')
+        .notNull()
+        .references(() => workspaces.id, { onDelete: 'cascade' }),
+    createdAt: timestamp('created_at', {
+        withTimezone: true,
+        mode: 'string',
+    })
+        .defaultNow()
+        .notNull(),
+    userId: uuid('user_id')
+        .notNull()
+        .references(() => users.id, { onDelete: 'cascade' }),
 });

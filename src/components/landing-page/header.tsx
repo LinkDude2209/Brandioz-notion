@@ -89,7 +89,7 @@ const Header = () => {
           dark:text-white
         "
                 >
-                    cypress.
+                    Brandioz-collab
                 </span>
             </Link>
             <NavigationMenu className="hidden md:block">

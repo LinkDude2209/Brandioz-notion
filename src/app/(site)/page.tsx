@@ -13,6 +13,13 @@ import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import clsx from 'clsx';
 import { randomUUID } from 'crypto';
 import { twMerge } from 'tailwind-merge';
+import { ExpandableCardDemo } from "@/components/ui/theclick";
+import { Carousel, CarouselContext } from "@/components/ui/apple-cards";
+import { AppleCardsCarouselDemo } from "@/components/landing-page/apple-card";
+import { FlipWordsDemo } from "@/components/landing-page/words";
+import { Globe } from "@/components/landing-page/sectionac";
+import { CoverDemo } from "@/components/landing-page/fast";
+
 
 
 
@@ -24,15 +31,17 @@ const HomePage = () => {
       px-4
       sm:px-6
       mt-10
+      pb-40
       sm:flex
       sm:flex-col
       gap-4
       md:justify-center
       md:items-center"
             >
+
                 <TitleSection
                     pill="✨ Your Workspace, Perfected"
-                    title="All-In-One Collaboration and Productivity Platform"
+                    title="Partner up, power up."
                 />
                 <div
                     className="bg-white
@@ -54,9 +63,37 @@ const HomePage = () => {
             bg-background
           "
                     >
-                        Get CypressFree
+                        Get Brandioz-collab
                     </Button>
                 </div>
+                <div
+                    className="md:mt-[-90px]
+        sm:w-full
+        w-[750px]
+        flex
+        justify-between
+        items-center
+        mt-[140px]
+        relative
+        sm:ml-0
+        ml-[-50px]"
+                >
+                    <FlipWordsDemo />
+                    <Globe />
+
+                    <div
+                        className="bottom-0
+          top-[50%]
+          bg-gradient-to-t
+          dark:from-background
+          left-0
+          right-0
+          absolute
+          z-10
+        "
+                    ></div>
+                </div>
+
                 <div
                     className="md:mt-[-90px]
           sm:w-full
@@ -64,16 +101,15 @@ const HomePage = () => {
           flex
           justify-center
           items-center
-          mt-[-40px]
+          mt-[140px]
           relative
           sm:ml-0
           ml-[-50px]
         "
                 >
-                    <Image
-                        src={Banner}
-                        alt="Application Banner"
-                    />
+                    <AppleCardsCarouselDemo />
+
+
                     <div
                         className="bottom-0
             top-[50%]
@@ -85,7 +121,9 @@ const HomePage = () => {
             z-10
           "
                     ></div>
+
                 </div>
+                <CoverDemo />
             </section>
             <section className="relative">
                 <div

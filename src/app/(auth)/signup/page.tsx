@@ -177,7 +177,7 @@ const Signup = () => {
                             className="w-full p-6"
                             disabled={isLoading}
                         >
-                            {!isLoading ? 'Create Account' : <Loader />}
+                            {!isLoading ? 'Create Account' : Loader()}
                         </Button>
                     </>
                 )}

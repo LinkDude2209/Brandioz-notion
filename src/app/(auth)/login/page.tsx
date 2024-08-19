@@ -122,7 +122,7 @@ const LoginPage = () => {
           size="lg"
           disabled={isLoading}
         >
-          {!isLoading ? 'Login' : <Loader />}
+          {!isLoading ? 'Login' : Loader()}
         </Button>
         <span className="self-container">
           Dont have an account?{' '}

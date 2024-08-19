@@ -19,7 +19,9 @@ import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
 import Logo from '../../../../public/cypresslogo.svg';
-import Loader from '@/components/global/Loader';
+import dynamic from 'next/dynamic';
+
+const Loader = dynamic(() => import('@/components/global/Loader'));
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { MailCheck } from 'lucide-react';
 import { FormSchema } from '@/lib/types';
@@ -172,12 +174,8 @@ const Signup = () => {
                                 </FormItem>
                             )}
                         />
-                        <Button
-                            type="submit"
-                            className="w-full p-6"
-                            disabled={isLoading}
-                        >
-                            {!isLoading ? 'Create Account' : Loader()}
+                        <Button type="submit" className="w-full p-6" disabled={isLoading}>
+                            {!isLoading ? 'Create Account' : <Loader />}
                         </Button>
                     </>
                 )}

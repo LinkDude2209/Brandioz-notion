@@ -18,7 +18,9 @@ import Image from 'next/image';
 import Logo from '../../../../public/cypresslogo.svg';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
-import Loader from '@/components/global/Loader';
+import dynamic from 'next/dynamic';
+
+const Loader = dynamic(() => import('@/components/global/Loader'));
 import { Separator } from '@/components/ui/seperator';
 import { actionLoginUser } from '@/lib/server-actions/auth-actions';
 
@@ -116,13 +118,8 @@ const LoginPage = () => {
           )}
         />
         {submitError && <FormMessage>{submitError}</FormMessage>}
-        <Button
-          type="submit"
-          className="w-full p-6"
-          size="lg"
-          disabled={isLoading}
-        >
-          {!isLoading ? 'Login' : Loader()}
+        <Button type="submit" className="w-full p-6" size="lg" disabled={isLoading}>
+          {!isLoading ? 'Login' : <Loader />}
         </Button>
         <span className="self-container">
           Dont have an account?{' '}

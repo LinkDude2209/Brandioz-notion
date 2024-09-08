@@ -2,9 +2,9 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardBody } from "../ui/threedcard";
-import { CardContainer } from "../ui/threedcard";
-import { CardItem } from "../ui/threedcard";
+import { CardBody } from "../ui/3d-card";
+import { CardContainer } from "../ui/3d-card";
+import { CardItem } from "../ui/3d-card";
 import { Calendar } from "@/components/ui/calendar";
 
 export function CalendarDemo() {

@@ -32,27 +32,26 @@ const FoldersDropdownList: React.FC<FoldersDropDownListProps> = ({ workspaceFold
                             ?.folders.find((f) => f.id === folder.id)?.files || []
                     })),
                 },
-            })
+            });
         }
-    },
-        [workspaceFolders, workspaceId]);
+    }, [workspaceFolders, workspaceId, state, dispatch]);
 
     useEffect(() => {
         setFolders(
             state.workspaces.find((workspace) => workspace.id === workspaceId)
                 ?.folders || []
         );
-    }, [state, workspaceId])
+    }, [state.workspaces, workspaceId]);
 
     const addFolderHandler = async () => {
         if (folders.length >= 3 && !subscription) {
-
+            // Add some logic or feedback here
         }
         const newFolder: Folder = {
             data: null,
             id: v4(),
             createdAt: new Date().toISOString(),
-            title: 'Unititled',
+            title: 'Untitled',
             iconId: '📂',
             inTrash: null,
             workspaceId,
@@ -65,9 +64,10 @@ const FoldersDropdownList: React.FC<FoldersDropDownListProps> = ({ workspaceFold
         const { data, error } = await createFolder(newFolder);
         if (error) {
             toast({
-                title: 'Error', variant: 'destructive', description: 'Could not create teh folder'
-
-            })
+                title: 'Error',
+                variant: 'destructive',
+                description: 'Could not create the folder'
+            });
         } else {
             toast({
                 title: 'Success',
@@ -75,23 +75,24 @@ const FoldersDropdownList: React.FC<FoldersDropDownListProps> = ({ workspaceFold
             });
         }
     };
+
     return (
         <>
-            <div className='flex sticky z-20 top-0
-        bg-background  w-full h-10 group/title justify-between items-center pr-4 text-Neutrals/neutrals-8'>
+            <div className='flex sticky z-20 top-0 bg-background w-full h-10 group/title justify-between items-center pr-4 text-Neutrals/neutrals-8'>
                 <span className='text-Neutrals-8 font-bold text-xs'>FOLDERS</span>
                 <ToolTipComponenet message="Create Folder">
                     <PlusIcon
                         onClick={addFolderHandler}
-                        size={16} className='group-hover/title:inline-block hidden cursor-pointer
-            hover:dark:text-white'>
+                        size={16}
+                        className='group-hover/title:inline-block hidden cursor-pointer hover:dark:text-white'>
                     </PlusIcon>
                 </ToolTipComponenet>
-                <Accordion type="multiple" defaultValue={[folderId || '']}
-                    className="pb-20"></Accordion>
+                <Accordion type="multiple" defaultValue={[folderId || '']} className="pb-20">
+                    {/* Render accordion items here */}
+                </Accordion>
             </div>
         </>
-    )
+    );
 }
 
-export default FoldersDropdownList
+export default FoldersDropdownList;

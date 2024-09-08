@@ -13,7 +13,6 @@ import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
 import clsx from 'clsx';
 import { randomUUID } from 'crypto';
 import { twMerge } from 'tailwind-merge';
-import { ExpandableCardDemo } from "@/components/ui/theclick";
 import { Carousel, CarouselContext } from "@/components/ui/apple-cards";
 import { AppleCardsCarouselDemo } from "@/components/landing-page/apple-card";
 import { FlipWordsDemo } from "@/components/landing-page/words";

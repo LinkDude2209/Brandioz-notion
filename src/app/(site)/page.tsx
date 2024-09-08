@@ -225,7 +225,9 @@ const HomePage = () => {
             >
                 <ThreeDCardDemo />
                 <FunctionBasedValuesDemo />
+                <FunctionBasedValuesDemo />
             </section>
+
         </>
     )
 }

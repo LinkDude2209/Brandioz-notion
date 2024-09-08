@@ -12,7 +12,8 @@
     "generate": "drizzle-kit generate:pg",
     "drop": "drizzle-kit drop",
     "check": "drizzle-kit check:pg",
-    "up": "drizzle-kit up:pg"
+    "up": "drizzle-kit up:pg",
+    "test": "jest --verbose"
   },
   "dependencies": {
     "@heroicons/react": "^2.1.5",
@@ -90,6 +91,7 @@
     "drizzle-kit": "^0.24.2",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.8",
+    "jest": "^29.7.0",
     "postcss": "^8.4.45",
     "tailwindcss": "^3.4.10",
     "typescript": "^5"

@@ -11,7 +11,7 @@ export function AppleCardsCarouselDemo() {
   return (
     <div className=" h-full py-40 text-left">
       <h2 className="text-6xl mx-auto font-normal text-primary dark:text-violet-500">
-        How Brandioz-collab works
+        flosynq features
       </h2>
       <Carousel items={cards} />
     </div>

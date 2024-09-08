@@ -367,5 +367,11 @@ export const useAppState = () => {
     throw new Error('state is not available');
   }
 
-  return { state: context.state, dispatch: context.dispatch }; // Return an object with both state and dispatch
+  return {
+    state: context.state,
+    dispatch: context.dispatch,
+    workspaceId: context.workspaceId,
+    folderId: context.folderId,
+    fileId: context.fileId,
+  };
 };

@@ -25,10 +25,14 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "@/lib/*": [
+        "./src/lib/*"
+      ],
     }
   },
   "include": [
+    "gsap-split-text.d.ts",
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",

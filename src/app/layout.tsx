@@ -10,6 +10,7 @@ import { twMerge } from 'tailwind-merge';
 import AppStateProvider from '@/lib/providers/state-provider';
 import { SupabaseUserProvider } from '@/lib/providers/supabase-user-provider';
 
+
 const inter = DM_Sans({ subsets: ['latin'] });
 const montserrat = Montserrat({ subsets: ['latin'] });
 
@@ -25,19 +26,20 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={twMerge('bg-background', inter.className, montserrat.className)}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-        >
-          <AppStateProvider>
-            <SupabaseUserProvider>
-              {children}
-            </SupabaseUserProvider>
-          </AppStateProvider>
-
-        </ThemeProvider>
+      <body>
+        <div className={montserrat.className}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+          >
+            <AppStateProvider>
+              <SupabaseUserProvider>
+                {children}
+              </SupabaseUserProvider>
+            </AppStateProvider>
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );

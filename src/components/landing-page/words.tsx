@@ -1,14 +1,19 @@
 import React from "react";
 import { FlipWords } from "../ui/flip-words";
+import { cn } from "@/lib/utils";
 
-export function FlipWordsDemo() {
+interface FlipWordsDemoProps {
+    className?: string;
+}
+
+export function FlipWordsDemo({ className }: FlipWordsDemoProps) {
     const words = ["create", "innovate", "design", "build", "unite", "partner", "connect"];
     return (
-        <div className="h-[40rem] flex justify-center items-center px-4">
+        <div className={cn("h-[40rem] flex justify-center items-center px-4", className)}>
             <div className="text-6xl mx-auto font-normal text-primary dark:text-violet-500">
                 Collab &
                 <FlipWords words={words} /> <br />
-                with Brandioz-collab
+                with Flosynq
             </div>
         </div>
     );

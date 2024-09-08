@@ -89,7 +89,7 @@ const Header = () => {
           dark:text-white
         "
                 >
-                    Brandioz-collab
+                    flosynq
                 </span>
             </Link>
             <NavigationMenu className="hidden md:block">
@@ -229,7 +229,6 @@ const Header = () => {
             >
                 <Link href={'/login'}>
                     <Button
-                        variant="btn-secondary"
                         className=" p-1 hidden sm:block"
                     >
                         Login
@@ -237,7 +236,6 @@ const Header = () => {
                 </Link>
                 <Link href="/signup">
                     <Button
-                        variant="btn-primary"
                         className="whitespace-nowrap"
                     >
                         Sign Up

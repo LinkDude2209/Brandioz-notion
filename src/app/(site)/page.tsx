@@ -2,11 +2,7 @@ import React from "react";
 import TitleSection from "@/components/landing-page/title-section";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import Banner from '../../../public/appBanner.png'
-import Cal from '../../../public/cal.png'
-import Diamond from '../../../public/diamond.svg'
-import Check from '../../../public/check.svg'
-import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS, } from '@/lib/constants';
+// import { CLIENTS, PRICING_CARDS, PRICING_PLANS, USERS, } from '@/lib/constants';
 import CustomCard from "@/components/landing-page/custom-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { CardContent, CardDescription, CardTitle } from "@/components/ui/card";
@@ -96,7 +92,7 @@ const HomePage = () => {
                 <CoverDemo />
             </section>
             <section className="relative">
-                <div
+                {/* <div
                     className="overflow-hidden
           flex
           after:content['']
@@ -154,7 +150,7 @@ const HomePage = () => {
                             ))}
                         </div>
                     ))}
-                </div>
+                </div> */}
             </section>
             <section
                 className="px-4
@@ -195,11 +191,7 @@ const HomePage = () => {
           border-opacity-10
         "
                 >
-                    <Image
-                        src={Cal}
-                        alt="Banner"
-                        className="rounded-2xl"
-                    />
+
                 </div>
             </section>
             <section className="relative">
@@ -225,7 +217,7 @@ const HomePage = () => {
             >
                 <ThreeDCardDemo />
                 <FunctionBasedValuesDemo />
-                <FunctionBasedValuesDemo />
+
             </section>
 
         </>

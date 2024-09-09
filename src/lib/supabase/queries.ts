@@ -1,7 +1,7 @@
 
 "use server"
 import { Folder, Subscription, User, workspace } from "./supabase.types";
-import db from "./db";
+import { db } from "./db";
 import { workspaces } from "../../../migrations/schema";
 import { validate } from 'uuid';
 import { files, folders, users } from '../../../migrations/schema';

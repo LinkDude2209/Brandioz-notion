@@ -5,7 +5,7 @@ import React from "react";
 import { CardBody } from "../ui/3d-card";
 import { CardContainer } from "../ui/3d-card";
 import { CardItem } from "../ui/3d-card";
-import { Calendar } from "@/components/ui/calendar";
+import { Calendar } from "../ui/calendar";
 
 export function CalendarDemo() {
     return (

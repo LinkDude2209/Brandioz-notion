@@ -5,7 +5,7 @@ import { Subscription } from "../supabase/supabase.types";
 import { createContext, useContext, useEffect, useState } from "react";
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { getUserSubscriptionStatus } from "../supabase/queries";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "../../components/ui/use-toast";
 
 type SupabaseUserContextType = {
     user: AuthUser | null;

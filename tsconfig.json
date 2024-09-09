@@ -1,44 +1,50 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+      "ESNext",
+      "DOM"
     ],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "noEmit": true,
     "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "outDir": "./dist",
+    "sourceMap": true,
+    "noEmit": false,
+    "types": [
+      "node",
+      "jest"
+    ],
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".", // Set the base URL for path resolution
+    "paths": {
+      "@/*": [
+        "src/*"
+      ] // Map @/ to src/ directory
+    },
     "plugins": [
       {
         "name": "next"
       }
-    ],
-    "paths": {
-      "@/*": [
-        "./src/*"
-      ],
-      "@/lib/*": [
-        "./src/lib/*"
-      ],
-    }
+    ]
   },
   "include": [
-    "gsap-split-text.d.ts",
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
     ".next/types/**/*.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist",
+    "build",
+    "test"
   ]
 }

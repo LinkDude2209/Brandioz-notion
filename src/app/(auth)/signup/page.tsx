@@ -18,7 +18,7 @@ import React, { useMemo, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
-import Logo from '../../../../public/cypresslogo.svg';
+
 import dynamic from 'next/dynamic';
 
 const Loader = dynamic(() => import('@/components/global/Loader'));
@@ -102,12 +102,7 @@ const Signup = () => {
           justify-left
           items-center"
                 >
-                    <Image
-                        src={Logo}
-                        alt="cypress Logo"
-                        width={50}
-                        height={50}
-                    />
+
                     <span
                         className="font-semibold
           dark:text-white text-4xl first-letter:ml-2"
